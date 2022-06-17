@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
  * *
  */
 @RestController
-@RequestMapping(path="/rest", headers = "type-level-header=h0_value")  // header should appear for all mappings
+@RequestMapping(path = "/rest", headers = "type-level-header=h0_value")  // header should appear for all mappings
 public class MyRestController {
 
     // OpenAPI for @RequestHeader and @RequestParam w/u explicit value/name attributes
@@ -34,7 +34,7 @@ public class MyRestController {
 
     // OpenAPI for default values for @RequestParam and @RequestHeader
     @GetMapping("/p4")
-    public String p4(@RequestParam(name = "param1", defaultValue = "param1_value") String rp, @RequestHeader(value = 
+    public String p4(@RequestParam(name = "param1", defaultValue = "param1_value") String rp, @RequestHeader(value =
             "myheader1", defaultValue = "header1_value") String rh) {
         return "p4";
     }
@@ -51,8 +51,20 @@ public class MyRestController {
     @PostMapping(path = "/p5", produces = "text/json", consumes = "text/json")
     @ResponseBody()
     public String p5(@RequestBody(required = false)
-                             String req) {
+                     String req) {
         return "p5 " + req;
+    }
+    // OpenAPI for @RequestHeader, @RequestParam and @CookieValue w/o values
+    @GetMapping(value = "/p6")
+    public String p6(@RequestParam String reqparam1,
+                     @RequestHeader String reqheader1,
+                     @CookieValue String mycookie) {
+        return "p6";
+    }
+
+    @GetMapping("/p7")
+    public String p7(@CookieValue(name = "blablabla", required = false) String blacookie){
+        return "p7";
     }
 }
                                       
