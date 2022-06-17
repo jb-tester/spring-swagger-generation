@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
  * *
  */
 @RestController
-@RequestMapping("/rest")
+@RequestMapping(path="/rest", headers = "type-level-header=h0_value")  // header should appear for all mappings
 public class MyRestController {
 
     // OpenAPI for @RequestHeader and @RequestParam w/u explicit value/name attributes

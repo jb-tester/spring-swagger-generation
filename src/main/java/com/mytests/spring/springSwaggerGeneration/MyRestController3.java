@@ -10,7 +10,9 @@ public class MyRestController3 {
  
   
   // ResponseStatus
-  @ResponseStatus(value= HttpStatus.I_AM_A_TEAPOT)  
+  // @ResponseStatus // should generate 500
+  @ResponseStatus(value = HttpStatus.I_AM_A_TEAPOT) // 418
+  //@ResponseStatus(code = HttpStatus.I_AM_A_TEAPOT) // 418
   @GetMapping("/p1")
   public String p1() {
     return "p1";
