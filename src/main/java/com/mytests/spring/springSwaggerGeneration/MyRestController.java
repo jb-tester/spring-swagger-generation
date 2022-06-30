@@ -1,5 +1,6 @@
 package com.mytests.spring.springSwaggerGeneration;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -53,6 +54,12 @@ public class MyRestController {
     public String p5(@RequestBody(required = false)
                      String req) {
         return "p5 " + req;
+    }
+    @PostMapping(path = "/p51", produces = {"!text/plain", "text/*"}, consumes = MediaType.TEXT_PLAIN_VALUE)
+    @ResponseBody()
+    public String p51(@RequestBody
+                     String req) {
+        return "p51 " + req;
     }
     // OpenAPI for @RequestHeader, @RequestParam and @CookieValue w/o values
     @GetMapping(value = "/p6")
