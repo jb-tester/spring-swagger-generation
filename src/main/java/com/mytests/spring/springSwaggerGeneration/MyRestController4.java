@@ -3,18 +3,35 @@ package com.mytests.spring.springSwaggerGeneration;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/rest4")
 public class MyRestController4 {
 
-  @RequestMapping (path = "/p1", method = {RequestMethod.POST})
-  public String handle(@RequestBody() String rb) {
+    @RequestMapping (path = "/p10", method = {RequestMethod.POST})
+    public String handleInt(@RequestBody(required = true) int rb) {
+        return "";
+    }
+    @RequestMapping (path = "/p11", method = {RequestMethod.POST})
+    public String handleStr(@RequestBody(required = false) String rb) {
+        return "";
+    }
+    @RequestMapping (path = "/p12", method = {RequestMethod.POST})
+    public String handleStrs(@RequestBody(required = false) List<String> rb) {
+        return "";
+    }
+    @RequestMapping (path = "/p13", method = {RequestMethod.POST})
+  public String handlePojo(@RequestBody MyPojo rb) {
       return "";
   }
-
+    @RequestMapping (path = "/p14", method = {RequestMethod.POST})
+    public String handlePojos(@RequestBody List<MyPojo> rb) {
+        return "";
+    }
     @PostMapping("/p2")
-    public String create(@RequestPart("doc") String doc,
-                           @RequestPart(name = "file",required = false) MultipartFile file) {
+    public String create(@RequestPart String doc,
+                           @RequestPart(name = "file") MultipartFile file) {
         
         return "";
     }
