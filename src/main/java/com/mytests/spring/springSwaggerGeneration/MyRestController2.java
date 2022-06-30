@@ -27,8 +27,8 @@ public class MyRestController2 {
        return "p1 "+mycookie;
    } 
    
-   @GetMapping("/p2/{pvar1}-{pavr2}")
-    public String p2(@PathVariable(name = "pvar1") String pv1, @PathVariable String pavr2){
+   @GetMapping("/p2/{pvar1}-{pvar2}/{pvar3}{pvar4}")
+    public String p2(@PathVariable(name = "pvar1") String pv1, @PathVariable String pvar2, @PathVariable String pvar3, @PathVariable String pvar4){
         return "p2";
    }
 

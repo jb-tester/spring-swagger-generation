@@ -19,8 +19,8 @@ public class MyRestController3 {
   }
 
   // PathVariable with prefix/suffix in the same fragment
-  @GetMapping("/p2/foo{bar}boo/")
-  public String p2(@PathVariable String bar) {
+  @GetMapping("/p2/foo{bar}boo{foo}/")
+  public String p2(@PathVariable String bar, @PathVariable int foo) {
     return "p2";
   }
   
