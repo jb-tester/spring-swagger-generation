@@ -10,7 +10,7 @@ import java.util.List;
 public class MyRestController4 {
 
     @RequestMapping (path = "/p10", method = {RequestMethod.POST})
-    public String handleInt(@RequestBody(required = true) int rb) {
+    public String handleInt(@RequestBody(required = true) Integer rb) {
         return "";
     }
     @RequestMapping (path = "/p11", method = {RequestMethod.POST})

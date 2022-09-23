@@ -38,7 +38,7 @@ public class MyRestController2 {
     }
 
     @RequestMapping(value = "/p4/{mv1}/{mv2}", method = RequestMethod.GET)
-    public String p4(@MatrixVariable(pathVar = "mv1") Integer mv1p,@MatrixVariable(pathVar = "mv2", required = false) Integer mv2p ) {
+    public String p4(@MatrixVariable Integer mv1, @MatrixVariable(pathVar = "mv2", required = false) Integer mv2p ) {
         return "p4";
     }
 }
