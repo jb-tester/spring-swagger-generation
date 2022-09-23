@@ -29,6 +29,10 @@ public class MyRestController4 {
     public String handlePojos(@RequestBody List<MyPojo> rb) {
         return "";
     }
+    @RequestMapping (path = "/p15", method = {RequestMethod.POST})
+    public String handleJacksonPojo(@RequestBody MyJacksonPOJO rb) {
+        return "";
+    }
     @PostMapping("/p2")
     public String create(@RequestPart String doc,
                            @RequestPart(name = "file") MultipartFile file) {
